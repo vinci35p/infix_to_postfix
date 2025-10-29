@@ -36,6 +36,8 @@ class Stack:
                 print(current.data)
                 current = current.next
 
+# Infix to postfix conversion
+
 def ranking(oper):
     if oper == '+' or oper == '-':
         return 1
@@ -44,3 +46,27 @@ def ranking(oper):
     if oper == '^':
         return 3
     return 0
+
+def infix_to_postfix(expression):
+    output = ""
+    stack = Stack()
+
+    for char in expression:
+        if char.isalnum():
+            output += char
+        elif char == '(':
+            stack.push(char)
+        elif char == ')':
+            while stack.peek() is not None and stack.peek() != '(':
+                output += stack.pop()
+            stack.pop()
+        else:
+            while (not stack.is_empty() and ranking(stack.peek()) >= ranking(char)):
+                output += stack.pop()
+            stack.push(char)
+
+    while not stack.is_empty():
+        output += stack.pop()
+
+    return output
+

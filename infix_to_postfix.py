@@ -36,11 +36,11 @@ class Stack:
                 print(current.data)
                 current = current.next
 
-gamestack = Stack()
-gamestack.push("Minecraft")
-gamestack.push("Honkai Star Rail")
-gamestack.push("Genshin Impact")
-gamestack.push("Mobile Legends")
-gamestack.pop()
-print("Top Item: " + gamestack.peek())
-gamestack.print_stack()
+def ranking(oper):
+    if oper == '+' or oper == '-':
+        return 1
+    if oper == '*' or oper == '/':
+        return 2
+    if oper == '^':
+        return 3
+    return 0

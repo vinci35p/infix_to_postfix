@@ -26,6 +26,10 @@ class Stack:
             return self.top.data
         else:
             return None
+        
+    def is_empty(self):
+        return self.top is None
+    
     def print_stack(self):
         if self.top is None:
             print("Stack is empty.")
@@ -38,12 +42,12 @@ class Stack:
 
 # Infix to postfix conversion
 
-def ranking(oper):
-    if oper == '+' or oper == '-':
+def ranking(op):
+    if op == '+' or op == '-':
         return 1
-    if oper == '*' or oper == '/':
+    if op == '*' or op == '/':
         return 2
-    if oper == '^':
+    if op == '^':
         return 3
     return 0
 

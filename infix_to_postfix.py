@@ -70,3 +70,6 @@ def infix_to_postfix(expression):
 
     return output
 
+expression = input("Enter infix expression:")
+print("Infix expression: ", expression)
+print("Postfix expression: ", infix_to_postfix(expression))

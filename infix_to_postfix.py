@@ -1,6 +1,6 @@
 class Node:
     def __init__(self, data):
-        self.data = 0
+        self.data = data
         self.next = None
 
 class Stack:
@@ -35,3 +35,10 @@ class Stack:
             while current:
                 print(current.data)
                 current = current.next
+
+gamestack = Stack()
+gamestack.push("Minecraft")
+gamestack.push("Honkai Star Rail")
+gamestack.push("Genshin Impact")
+gamestack.push("Mobile Legends")
+gamestack.print_stack()
